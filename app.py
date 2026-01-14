@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix, classification_report
 
-MODEL_PATH = r"C:\Users\arnav\proj\brain_tumor_binary.h5"
-TEST_PATH = r"C:\Users\arnav\proj\Brain Data\archive\Testing"
+MODEL_PATH = r"brain_tumor_binary.h5"
+TEST_PATH = r"Testing"
 
 model = tf.keras.models.load_model(MODEL_PATH)
 
@@ -105,3 +105,4 @@ with tab2:
     })
 
     st.table(metrics_df)
+
