@@ -41,14 +41,14 @@ if selection == "Detector":
         st.write("File detected!")
         st.image(file, width=300)
         
-        st.write("Loading the model file brain_tumor_binary.h5...")
+        st.write("Loading the model file brain_tumor_binary.h5.")
         try:
             my_model = tf.keras.models.load_model("brain_tumor_binary.h5")
             st.write("Model loaded successfully.")
         except:
             st.write("Error: Could not load the model file.")
 
-        st.write("Preparing the image for the model...")
+        st.write("Preparing the image for the model.")
         temp_img = load_img(file)
         temp_img = temp_img.resize((224, 224))
         arr = img_to_array(temp_img)
@@ -57,7 +57,7 @@ if selection == "Detector":
         st.write("Resizing done. Normalizing done.")
 
         if st.button("Predict Now"):
-            st.write("Thinking...")
+            st.write("Thinking.")
             time.sleep(1)
             output = my_model.predict(ready_img)[0][0]
             
@@ -75,10 +75,10 @@ if selection == "Graphs and Math":
     st.write("Testing the model on my lite testing dataset folder.")
     
     if st.button("Run Accuracy Test"):
-        st.write("Checking if Testing folder exists...")
+        st.write("Checking if Testing folder exists.")
         
         if os.path.exists("Testing"):
-            st.write("Folder found! Let's go.")
+            st.write("Folder found.")
             
             try:
                 m = tf.keras.models.load_model("brain_tumor_binary.h5")
@@ -96,7 +96,7 @@ if selection == "Graphs and Math":
                 true_vals = []
                 pred_vals = []
                 
-                st.write("Predicting images one by one...")
+                st.write("Predicting images one by one.")
                 bar = st.progress(0)
                 
                 all_images = list(data)
@@ -140,3 +140,4 @@ if selection == "Graphs and Math":
         else:
             st.error("FileNotFoundError: The 'Testing' folder is not in GitHub!")
             st.write("I need to make sure the folder is named 'Testing' and has images inside.")
+
