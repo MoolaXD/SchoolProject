@@ -12,9 +12,9 @@ import time
 
 st.set_page_config(page_title="Brain Tumor Detector", layout="centered")
 
-st.title("My School Science Project: Brain Tumor Detector")
+st.title("My School Personal Project: Brain Tumor Detector")
 st.write("Created by: Arnav")
-st.write("Date: 2024")
+st.write("Date: 2025")
 
 st.sidebar.title("Menu")
 selection = st.sidebar.selectbox("Go to page:", ["Home", "Detector", "Graphs and Math"])
@@ -140,6 +140,3 @@ if selection == "Graphs and Math":
         else:
             st.error("FileNotFoundError: The 'Testing' folder is not in GitHub!")
             st.write("I need to make sure the folder is named 'Testing' and has images inside.")
-
-st.write("---")
-st.write("Project End.")
